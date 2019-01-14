@@ -47,7 +47,12 @@ void Motor_Cntrl(uint8_t command){
 			PTE->PCOR = MASK(MOTORA2);
 			PTE->PSOR = MASK(STBY);
 			break;
-		
+		case 2:
+			//Go CCW
+			PTE->PCOR = MASK(MOTORA1);
+			PTE->PSOR = MASK(MOTORA2);
+			PTE->PSOR = MASK(STBY);
+		  break;
 		default:
 			PTE->PCOR = MASK(STBY);
 			break;
